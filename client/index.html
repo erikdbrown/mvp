@@ -1,0 +1,15 @@
+<html>
+<head>
+  <title>studentPairer</title>
+</head>
+<body>
+  <h1>studentGroups</h1>
+  <div ng-app='app' ng-controller="simpleController">
+    <input type='text' ng-model='student'>
+    <input type='submit' ng-click='addStudent(student)' value='Add Student'></input>
+    <pre>{{ students }}</pre>
+  </div>
+  <script src="lib/angular/angular.js"></script>
+  <script src="app/app.js"></script>
+</body>
+</html>
