@@ -7,6 +7,13 @@
   <div ng-app='app' ng-controller="simpleController">
     <input type='text' ng-model='student'>
     <input type='submit' ng-click='addStudent(student)' value='Add Student'></input>
+    <div ng-repeat='student in students'>
+      <div class='students'>
+        <ul>
+          <li>{{student}}</li>
+        </ul>
+      </div>
+    </div>
     <pre>{{ students }}</pre>
   </div>
   <script src="lib/angular/angular.js"></script>
