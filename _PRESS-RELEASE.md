@@ -1,4 +1,4 @@
-# Project: Strtegiec Pairing #
+# Project: Strategic Pairing #
  
 ## studentPairer ##
   <!-- > Name the product in a way the reader (i.e. your target customers) will understand. -->
