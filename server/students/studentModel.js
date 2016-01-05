@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var bcrypt = require('bcrypt');
+// var bcrypt = require('bcrypt');
 
 var StudentSchema = new mongoose.Schema({
   first: String,
@@ -7,4 +7,9 @@ var StudentSchema = new mongoose.Schema({
   age: Number
 });
 
-module.exports = mongoose.model('Student', StudentSchema);
+StudentSchema.pre('save', function(next) {
+  var student = this;
+  next();
+})
+
+module.exports = mongoose.model('Students', StudentSchema);
