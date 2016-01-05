@@ -15,10 +15,10 @@
     <td>{{ student.first }}</td>
     <td>{{ student.last }}</td>
     <td>{{ student.age }}</td>
-    <td><input type='checkbox' name='global' ></td>
-    <td><input type='checkbox' name='analytic' ></td>
-    <td><input type='checkbox' name='auditory' ></td>
-    <td><input type='checkbox' name='kinesthetic' ></td>
-    <td><input type='checkbox' name='visual' ></td>
+    <td><input type='checkbox' name='global' ng-checked='student.styles.global' ng-disabled='true'></td>
+    <td><input type='checkbox' name='analytic' ng-checked='student.styles.analytic' ng-disabled='true'></td>
+    <td><input type='checkbox' name='auditory' ng-checked='student.styles.auditory' ng-disabled='true'></td>
+    <td><input type='checkbox' name='kinesthetic' ng-checked='student.styles.kinesthetic' ng-disabled='true'></td>
+    <td><input type='checkbox' name='visual' ng-checked='student.styles.visual' ng-disabled='true'></td>
   </tr>
 </table>

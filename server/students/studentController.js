@@ -6,15 +6,12 @@ module.exports = {
   addStudents: function(req, res, next) {
     
     var newStudents = req.body.students.map(function(student) {
-      var styles = [];
-      for (var key in student.styles) {
-        styles.push(key);
-      }
+      
       return { 
         first: student.first, 
         last: student.last, 
         age: student.age,
-        styles: styles
+        styles: student.styles
       };
     })
 

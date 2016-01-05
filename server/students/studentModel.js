@@ -5,7 +5,7 @@ var StudentSchema = new mongoose.Schema({
   first: String,
   last: String,
   age: Number,
-  styles: Array
+  styles: Object
 });
 
 StudentSchema.pre('save', function(next) {
