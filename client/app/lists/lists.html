@@ -1,0 +1,24 @@
+<table ng-module='grouply.lists'>
+  <tr>
+    <th></th>
+    <th>First</th>
+    <th>Last</th>
+    <th>Age</th>
+    <th>Global</th>
+    <th>Analytic</th>
+    <th>Auditory</th>
+    <th>Kinesthetic</th>
+    <th>Visual</th>
+  </tr>
+  <tr ng-repeat='student in students'>
+    <td>{{ $index + 1 }}.</td>
+    <td>{{ student.first }}</td>
+    <td>{{ student.last }}</td>
+    <td>{{ student.age }}</td>
+    <td><input type='checkbox' name='global' ></td>
+    <td><input type='checkbox' name='analytic' ></td>
+    <td><input type='checkbox' name='auditory' ></td>
+    <td><input type='checkbox' name='kinesthetic' ></td>
+    <td><input type='checkbox' name='visual' ></td>
+  </tr>
+</table>

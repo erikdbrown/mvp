@@ -13,9 +13,26 @@ module.exports = {
       };
     })
 
-    Student.create(newStudents, function(err, students) {
-      if (err) throw err
-      res.send(students)
+    if (newStudents.length === 1 ) {
+      Student.create(newStudents[0], function(err, students) {
+        if (err) throw err
+        next();
+      })  
+    } else {
+      Student.create(newStudents, function(err, students) {
+        if (err) throw err
+        next();
+      })
+    }
+  },
+
+  allStudents: function(req, res, next) {
+    console.log('you\'re in the allStudents controller method')
+    Student.find({}).then(function(students) {
+      res.json(students);
+    })
+    .fail(function(error) {
+      next(error);
     })
   }
 }

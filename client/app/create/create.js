@@ -1,24 +1,23 @@
 angular.module('grouply.create', [])
 
-.factory('Students', function($http) {
+.factory('Students', function($http, $location) {
   return {
-    addStudents: function(students) {
+    addStudents: function(students, next) {
 
       $http({
         method: 'POST',
         url: 'api/create/',
         data: JSON.stringify({students: students})
       })
-      .then(function(res) {
-        console.log('students added')
-        return res;
+      .then(function() {
+        console.log('students added');
+        next();
       })
     }
   }
-
 })
 
-.controller('createController', function($scope, Students) {
+.controller('createController', function($scope, $location, Students) {
   $scope.students = [];
   $scope.student = {};
 
@@ -27,16 +26,12 @@ angular.module('grouply.create', [])
     $scope.student.last = $scope.student.last.charAt(0).toUpperCase() + $scope.student.last.slice(1);
     $scope.students.push($scope.student);
     $scope.student = {};
-    // student = student.split(' ');
-
-    // newStudent.age = $scope.age;
-    // $scope.students.push(newStudent)
-    // // Students.addStudent(student);
-    // $scope.student = '';
   };
 
   $scope.addStudents = function() {
-    Students.addStudents($scope.students);
-    $scope.students = {};
+    Students.addStudents($scope.students, function() {
+      $location.path('/links');
+      $scope.students = [];
+    })
   }
 })
