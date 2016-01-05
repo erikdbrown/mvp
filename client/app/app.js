@@ -10,11 +10,11 @@ angular.module('grouply', [
       templateUrl: 'app/create/create.html',
       controller: 'createController'
     })
-    .when('/links', {
+    .when('/lists', {
       templateUrl: 'app/lists/lists.html',
       controller: 'listsController'
     })
     .otherwise({
-      redirectTo: '/create'
+      redirectTo: '/'
     })
 });
