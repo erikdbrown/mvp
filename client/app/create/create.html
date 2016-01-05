@@ -27,11 +27,11 @@
       <td><input type='text' ng-model='student.first' ></td>
       <td><input type='text' ng-model='student.last' ></td>
       <td><input type='type' size='3' maxlength='3' ng-model='student.age'></td>
-      <td><input type='checkbox' name='global' ng-model='student.global'></td>
-      <td><input type='checkbox' name='analytic' ng-model='student.analytic'></td>
-      <td><input type='checkbox' name='auditory' ng-model='student.auditory'></td>
-      <td><input type='checkbox' name='kinesthetic' ng-model='student.kinesthetic'></td>
-      <td><input type='checkbox' name='visual' ng-model='visual'></td>
+      <td><input type='checkbox' name='global' ng-model='student.styles.global'></td>
+      <td><input type='checkbox' name='analytic' ng-model='student.styles.analytic'></td>
+      <td><input type='checkbox' name='auditory' ng-model='student.styles.auditory'></td>
+      <td><input type='checkbox' name='kinesthetic' ng-model='student.styles.kinesthetic'></td>
+      <td><input type='checkbox' name='visual' ng-model='student.styles.visual'></td>
     </tr>
   </table>
   <input type='submit' ng-click='addToList(student)' value='Add Student'></input>

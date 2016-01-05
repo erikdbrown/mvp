@@ -4,7 +4,8 @@ var mongoose = require('mongoose');
 var StudentSchema = new mongoose.Schema({
   first: String,
   last: String,
-  age: Number
+  age: Number,
+  styles: Array
 });
 
 StudentSchema.pre('save', function(next) {

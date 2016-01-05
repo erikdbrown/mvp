@@ -20,12 +20,14 @@ angular.module('grouply.create', [])
 .controller('createController', function($scope, $location, Students) {
   $scope.students = [];
   $scope.student = {};
+  $scope.student.styles = {};
 
   $scope.addToList = function() {
     $scope.student.first = $scope.student.first.charAt(0).toUpperCase() + $scope.student.first.slice(1);
     $scope.student.last = $scope.student.last.charAt(0).toUpperCase() + $scope.student.last.slice(1);
     $scope.students.push($scope.student);
     $scope.student = {};
+    $scope.student.styles = {};
   };
 
   $scope.addStudents = function() {
