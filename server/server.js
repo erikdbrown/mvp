@@ -18,6 +18,7 @@ app.post('/api/create', studentController.addStudents, function(req, res, next) 
 
 app.get('/api/lists', studentController.allStudents, function(req, res, next) {
   res.send();
+  next();
 });
 
 app.listen(8080);

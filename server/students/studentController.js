@@ -31,8 +31,8 @@ module.exports = {
     Student.find({}).then(function(students) {
       res.json(students);
     })
-    .fail(function(error) {
-      next(error);
-    })
+    // .fail(function(error) {
+    //   next(error);
+    // })
   }
 }

@@ -1,4 +1,4 @@
-<table ng-module='grouply.lists'>
+<table ng-module='grouply.lists' ng-init='displayStudents'>
   <tr>
     <th></th>
     <th>First</th>
@@ -10,7 +10,7 @@
     <th>Kinesthetic</th>
     <th>Visual</th>
   </tr>
-  <tr ng-repeat='student in students'>
+  <tr ng-repeat='student in data.list'>
     <td>{{ $index + 1 }}.</td>
     <td>{{ student.first }}</td>
     <td>{{ student.last }}</td>
