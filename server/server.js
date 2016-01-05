@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../client'));
 
-app.post('/api/create', studentController.addStudent);
+app.post('/api/create', studentController.addStudents);
 
 app.listen(8080);
 

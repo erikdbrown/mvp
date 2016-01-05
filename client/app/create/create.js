@@ -2,15 +2,15 @@ angular.module('grouply.create', [])
 
 .factory('Students', function($http) {
   return {
-    addStudents: function(student) {
-      console.log("you're in the Students factory")
+    addStudents: function(students) {
+
       $http({
         method: 'POST',
         url: 'api/create/',
-        data: JSON.stringify({student: student})
+        data: JSON.stringify({students: students})
       })
       .then(function(res) {
-        console.log('student added')
+        console.log('students added')
         return res;
       })
     }
@@ -37,5 +37,6 @@ angular.module('grouply.create', [])
 
   $scope.addStudents = function() {
     Students.addStudents($scope.students);
+    $scope.students = {};
   }
 })

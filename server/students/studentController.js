@@ -3,14 +3,19 @@ var Q = require('q');
 
 module.exports = {
 
-  addStudent: function(req, res, next) {
+  addStudents: function(req, res, next) {
     
-    var student = req.body;
-    
-    Student.create({first: 'Erik', last: 'Brown', age: 33}, function(err, newStudent) {
+    var newStudents = req.body.students.map(function(student) {
+      return { 
+        first: student.first, 
+        last: student.last, 
+        age: student.age 
+      };
+    })
+
+    Student.create(newStudents, function(err, students) {
       if (err) throw err
-      console.log(newStudent)
-      res.send(newStudent);
+      res.send(students)
     })
   }
 }
