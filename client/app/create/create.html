@@ -1,12 +1,41 @@
 <div ng-module='grouply.create'>
-  <input type='text' ng-model='student'>
-  <input type='submit' ng-click='addStudent(student)' value='Add Student'></input>
-  <div ng-repeat='student in students'>
-    <div class='students'>
-      <ul>
-        <li>{{student}}</li>
-      </ul>
-    </div>
+  <table>
+    <tr>
+      <th></th>
+      <th>First</th>
+      <th>Last</th>
+      <th>Age</th>
+      <th>Global</th>
+      <th>Analytic</th>
+      <th>Auditory</th>
+      <th>Kinesthetic</th>
+      <th>Visual</th>
+    </tr>
+    <tr ng-repeat='student in students'>
+      <td>{{ $index + 1 }}.</td>
+      <td>{{ student.first }}</td>
+      <td>{{ student.last }}</td>
+      <td>{{ student.age }}</td>
+      <td><input type='checkbox' name='global' ></td>
+      <td><input type='checkbox' name='analytic' ></td>
+      <td><input type='checkbox' name='auditory' ></td>
+      <td><input type='checkbox' name='kinesthetic' ></td>
+      <td><input type='checkbox' name='visual' ></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type='text' ng-model='student.first' ></td>
+      <td><input type='text' ng-model='student.last' ></td>
+      <td><input type='type' size='3' maxlength='3' ng-model='student.age'></td>
+      <td><input type='checkbox' name='global' ng-model='student.global'></td>
+      <td><input type='checkbox' name='analytic' ng-model='student.analytic'></td>
+      <td><input type='checkbox' name='auditory' ng-model='student.auditory'></td>
+      <td><input type='checkbox' name='kinesthetic' ng-model='student.kinesthetic'></td>
+      <td><input type='checkbox' name='visual' ng-model='visual'></td>
+    </tr>
+  </table>
+  <input type='submit' ng-click='addToList(student)' value='Add Student'></input>
+  <input type='submit' ng-click='' value='Save Students'></input>
   </div>
   <pre>{{ students }}</pre>
 </div>

@@ -2,7 +2,7 @@ angular.module('grouply.create', [])
 
 .factory('Students', function($http) {
   return {
-    addStudent: function(student) {
+    addStudents: function(student) {
       console.log("you're in the Students factory")
       $http({
         method: 'POST',
@@ -20,9 +20,22 @@ angular.module('grouply.create', [])
 
 .controller('createController', function($scope, Students) {
   $scope.students = [];
+  $scope.student = {};
 
-  $scope.addStudent = function(student) {
-    Students.addStudent(student);
-    $scope.student = '';
+  $scope.addToList = function() {
+    $scope.student.first = $scope.student.first.charAt(0).toUpperCase() + $scope.student.first.slice(1);
+    $scope.student.last = $scope.student.last.charAt(0).toUpperCase() + $scope.student.last.slice(1);
+    $scope.students.push($scope.student);
+    $scope.student = {};
+    // student = student.split(' ');
+
+    // newStudent.age = $scope.age;
+    // $scope.students.push(newStudent)
+    // // Students.addStudent(student);
+    // $scope.student = '';
+  };
+
+  $scope.addStudents = function() {
+    Students.addStudents($scope.students);
   }
 })
