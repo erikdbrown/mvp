@@ -13,25 +13,25 @@ module.exports = {
         age: student.age,
         styles: student.styles
       };
-    })
+    });
 
     if (newStudents.length === 1 ) {
       Student.create(newStudents[0], function(err, students) {
-        if (err) throw err
+        if (err) throw err;
         next();
-      })  
+      });
     } else {
       Student.create(newStudents, function(err, students) {
-        if (err) throw err
+        if (err) throw err;
         next();
-      })
+      });
     }
   },
 
   allStudents: function(req, res, next) {
-    console.log('you\'re in the allStudents controller method')
+    console.log('you\'re in the allStudents controller method');
     Student.find({}).then(function(students) {
       res.json(students);
-    })
+    });
   }
-}
+};

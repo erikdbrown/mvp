@@ -4,21 +4,49 @@
     <th>First</th>
     <th>Last</th>
     <th>Age</th>
-    <th>Global</th>
-    <th>Analytic</th>
     <th>Auditory</th>
     <th>Kinesthetic</th>
     <th>Visual</th>
+    <th>Tactile</th>
   </tr>
   <tr ng-repeat='student in data.list'>
     <td>{{ $index + 1 }}.</td>
     <td>{{ student.first }}</td>
     <td>{{ student.last }}</td>
     <td>{{ student.age }}</td>
-    <td><input type='checkbox' name='global' ng-checked='student.styles.global' ng-disabled='true'></td>
-    <td><input type='checkbox' name='analytic' ng-checked='student.styles.analytic' ng-disabled='true'></td>
     <td><input type='checkbox' name='auditory' ng-checked='student.styles.auditory' ng-disabled='true'></td>
     <td><input type='checkbox' name='kinesthetic' ng-checked='student.styles.kinesthetic' ng-disabled='true'></td>
     <td><input type='checkbox' name='visual' ng-checked='student.styles.visual' ng-disabled='true'></td>
+    <td><input type='checkbox' name='tactile' ng-checked='student.styles.tactile' ng-disabled='true'></td>
   </tr>
 </table>
+<input type='submit' ng-click='createPairs()' value='Generate Pairs'></input>
+<input type='submit' ng-click='createGroups()' value='Generate Groups'></input>
+<div ng-repeat='pair in pairsObj.auditoryPairs'>
+  <h4>Group {{ $index + 1 }} - Auditory</h4>
+  <ul>
+      <li>Student 1: {{ pair[0].first }} {{ pair[0].last }}</li>
+      <li>Student 2: {{ pair[1].first }} {{ pair[1].last }}</li>
+  </ul>
+</div>
+<div ng-repeat='pair in pairsObj.kinestheticPairs'>
+  <h4>Group {{ $index + 1 }} - Kinesthetic</h4>
+  <ul>
+      <li>Student 1: {{ pair[0].first }} {{ pair[0].last }}</li>
+      <li>Student 2: {{ pair[1].first }} {{ pair[1].last }}</li>
+  </ul>
+</div>
+<div ng-repeat='pair in pairsObj.visualPairs'>
+  <h4>Group {{ $index + 1 }} - Visual</h4>
+  <ul>
+      <li>Student 1: {{ pair[0].first }} {{ pair[0].last }}</li>
+      <li>Student 2: {{ pair[1].first }} {{ pair[1].last }}</li>
+  </ul>
+</div>
+<div ng-repeat='pair in pairsObj.tactilePairs'>
+  <h4>Group {{ $index + 1 }} - Tactile</h4>
+  <ul>
+      <li>Student 1: {{ pair[0].first }} {{ pair[0].last }}</li>
+      <li>Student 2: {{ pair[1].first }} {{ pair[1].last }}</li>
+  </ul>
+</div>

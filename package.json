@@ -10,8 +10,7 @@
     "type": "git",
     "url": "https://github.com/erikdbrown/2015-11-mvp.git"
   },
-  "bugs": {
-  },
+  "bugs": {},
   "license": "UNLICENSED",
   "private": true,
   "devDependencies": {
@@ -39,6 +38,7 @@
     "jwt-simple": "^0.2.0",
     "mongoose": "^4.1.0",
     "morgan": "^1.1.1",
+    "nodemon": "^1.8.1",
     "q": "^1.4.1",
     "request": "^2.36.0"
   }

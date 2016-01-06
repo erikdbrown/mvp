@@ -12,9 +12,9 @@ angular.module('grouply.create', [])
       .then(function() {
         console.log('students added');
         next();
-      })
+      });
     }
-  }
+  };
 })
 
 .controller('createController', function($scope, $location, Students) {
@@ -34,6 +34,6 @@ angular.module('grouply.create', [])
     Students.addStudents($scope.students, function() {
       $location.path('/links');
       $scope.students = [];
-    })
-  }
-})
+    });
+  };
+});

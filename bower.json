@@ -2,7 +2,8 @@
   "name": "studentGroups",
   "version": "0.0.0",
   "authors": [
-    "Erik Brown <erikdbrown@gmail.com"],
+    "Erik Brown <erikdbrown@gmail.com"
+  ],
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -13,6 +14,7 @@
   "dependencies": {
     "angular": "~1.3.16",
     "angular-route": "~1.3.16",
-    "angular-mocks": "~1.3.16"
+    "angular-mocks": "~1.3.16",
+    "underscore": "~1.8.3"
   }
 }

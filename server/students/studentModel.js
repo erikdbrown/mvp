@@ -11,6 +11,6 @@ var StudentSchema = new mongoose.Schema({
 StudentSchema.pre('save', function(next) {
   var student = this;
   next();
-})
+});
 
 module.exports = mongoose.model('Students', StudentSchema);
