@@ -15,6 +15,6 @@ angular.module('grouply', [
       controller: 'listsController'
     })
     .otherwise({
-      redirectTo: '/'
+      redirectTo: '/create'
     })
 });

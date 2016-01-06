@@ -87,7 +87,7 @@ angular.module('grouply.lists', [])
       }
     });
 
-    console.log('student styles: ', students_styles)
+    console.log('student styles: ', students_styles);
 
     $scope.pairs = [];
     for(var style in students_styles) {

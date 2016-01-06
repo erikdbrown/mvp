@@ -32,7 +32,7 @@ angular.module('grouply.create', [])
 
   $scope.addStudents = function() {
     Students.addStudents($scope.students, function() {
-      $location.path('/links');
+      $location.path('/lists');
       $scope.students = [];
     });
   };
