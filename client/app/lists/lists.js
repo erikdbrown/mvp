@@ -32,6 +32,69 @@ angular.module('grouply.lists', [])
   $scope.createGroups = function() {
   };
 
+  $scope.getOptimalPairStrategy = function(students) {
+
+    var lowestScore;
+    var lowestPermutations = [];
+    var styles = ['kinesthetic', 'visual', 'auditory', 'tactile'];
+    var pairStrategy = {
+      kinesthetic: {
+        tactile: 1,
+        visual: 2,
+        auditory: 3
+      },
+      visual: {
+        auditory: 1,
+        tactile: 2,
+        kinesthetic: 3
+      },
+      auditory: {
+        visual: 1,
+        kinesthetic: 2,
+        tactile: 3
+      },
+      tactile: {
+        kinesthetic: 1,
+        auditory: 2,
+        visual: 3
+      }
+    };
+
+    /*
+    students = {
+      kinesthetic: 5,
+      visual: 3,
+      auditory: 3,
+      tactile: 2
+    }
+    */
+
+    // save the permutation of styles -- will be 24
+    // for each permutation of styles
+      // initialize a score
+      // for each style
+        // take the modulo of the number of students
+        // if result does not equal 0
+          // if there are students left
+            // iterate through the pair stategy for current style
+              // if students[key of the current style] > 0
+                // add the value of the pairing * 2 to score
+                // decrease the total of students left for the two styles
+                // break the loop
+          // else
+            // TODO: what to do with a left over student.
+      // if lowestPermutations is an empty array
+        // push the style permutation into lowestPermutations
+        // set score as lowestScore
+      // else
+        // if the score is lower than lowestScore
+          // set score as lowestScore
+          // set lowestPermutations to empty array
+          // push style permutation into lowestPermutations
+        // if the score is equal to lowestScore
+          // push style permutation into lowestPermutations
+  }
+
   $scope.getAllPairs = function(studentArray) {
     var possiblePairs = [];
     var pair = [];
@@ -68,9 +131,9 @@ angular.module('grouply.lists', [])
 
   $scope.createPairs = function() {
     var pairStrategy = {
-      auditory: ['auditory', 'visual', 'kinesthetic', 'tactile'],
       kinesthetic: ['kinesthetic', 'tactile', 'visual', 'auditory'],
       visual: ['visual', 'auditory', 'tactile', 'kinesthetic'],
+      auditory: ['auditory', 'visual', 'kinesthetic', 'tactile'],
       tactile: ['tactile', 'kinesthetic', 'auditory', 'visual']
     };
 
